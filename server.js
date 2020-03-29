@@ -17,28 +17,49 @@ function handleError(res, reason, message, code) {
 }
 
 var cities = [
-    { Name: "Vancouver"},
-    { Name: "PortoAlegre"},
-    { Name: "Montreal"},
-    { Name: "SaoPaulo"}
+    { name: "Vancouver"},
+    { name: "PortoAlegre"},
+    { name: "Montreal"},
+    { name: "SaoPaulo"}
 ];
 
 var conditions = [
-    { Name: "Clear"},
-    { Name: "Cloudy"},
-    { Name: "Rain"},
-    { Name: "Thunderstorm"},
-    { Name: "Snow"},
-    { Name: "Mist"}
+    { name: "Clear"},
+    { name: "Cloudy"},
+    { name: "Rain"},
+    { name: "Thunderstorm"},
+    { name: "Snow"},
+    { name: "Mist"}
 ];
+
+function handleError(res, reason, message, code) {
+    console.log("ERROR: " + reason);
+    res.status(code || 500).json({"error": message});
+}
 
 app.get("/api/weather", function(req, res) {
     console.log("Fetching weather information");
+
+    let city = req.query.city;
+    console.log("City: " + city);
+
+    var found = cities.find(element => element.name === city);
+    if (found == undefined) {
+        handleError(res, "City not registered", "City not registered");
+        return;
+    }
+
+    let condition = conditions[Math.floor(Math.random() * conditions.length)].name;
+    console.log("Condition: " + condition);
+
+    let temperature = (Math.random() * 50) - 22; 
+    console.log("Temperature: " + temperature);
+
     res.status(200).json({
         date: new Date(new Date().toUTCString()),
-        city: cities[0].Name,
-        temperature: 22.0,
+        city: city,
+        temperature: temperature.toFixed(2),
         scale: "celsius",
-        condition: conditions[0].Name
+        condition: condition
     });
 });
