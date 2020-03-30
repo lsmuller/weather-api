@@ -7,7 +7,7 @@
 
 #### Models definition
 weather  
-```json 
+``` 
 {
     date: "2020-03-30T03:14:56.000Z", 
     city: "Vancouver", 
@@ -17,14 +17,14 @@ weather
 }
 ```
 city 
-```json 
+``` 
 { 
     Name: "Vancouver" 
 }
 ```
 
 condition 
-```json 
+``` 
 { 
     Name: "clear" 
 }
@@ -39,7 +39,7 @@ scale
 
 #### Data sample
 **City:**
-```json
+```
 {
     [
         { Name: "Vancouver" },
@@ -51,7 +51,7 @@ scale
 ```
 
 **Condition**
-```json
+```
 {
     [
         { Name: "Clear" },
