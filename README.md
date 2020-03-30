@@ -9,33 +9,33 @@
 weather  
 ```json 
 {
-    date: string, 
-    city: string (city.Name), 
-    temperature: float, 
-    scale: string (celsius), 
-    condition: string (condition.Name)
+    date: "2020-03-30T03:14:56.000Z", 
+    city: "Vancouver", 
+    temperature: 2, 
+    scale: "celsius", 
+    condition: "clear"
 }
 ```
 city 
 ```json 
 { 
-    Name: string 
+    Name: "Vancouver" 
 }
 ```
 
 condition 
 ```json 
 { 
-    Name: string 
+    Name: "clear" 
 }
 ```
 
 scale    
-`{ "celsius" }`
+`celsius`
 
 #### Responses
 200 : `weather`
-500 : `{ "error" : "string" }`
+500 : `{ error : "Error Message" }`
 
 #### Data sample
 **City:**
@@ -83,7 +83,7 @@ Even though it's not the most complete framework, it's quite easy to use and req
 - **authentication:** [Passport.js](http://www.passportjs.org/packages/)
 Well known and proves several strategies to assist the developers.
 
-- **deploy: **[Heroku](heroku.com/)
+- **deploy:** [Heroku](heroku.com/)
 Extremelly easy to use with Node.js, offers a wide range of built-in services in the platform, free (depending on constraints that can be checked on the website)
 
 ### Date
@@ -136,7 +136,7 @@ https://evening-wave-33176.herokuapp.com?city=PortoAlegre
 Further read about how to add the Swagger to the app. Post the API to [SwaggerHub](https://swagger.io/tools/swaggerhub/). Use [Docker](https://www.docker.com/) container to execute the application.
  
 ##### Implement Authentication
- Update the application to use [Passport.js](http://www.passportjs.org/) to authenticate the user using OAuth 2.0 via Google account.
+Update the application to use [Passport.js](http://www.passportjs.org/) to authenticate the user using OAuth 2.0 via Google account.
 
 ##### Build the UI using Angular
 I have tried to create a dummy component fetching static data from the API, but I was unsuccessfull in my attempt. I have no knowledge in front-end development as of now.
@@ -145,15 +145,15 @@ I have tried to create a dummy component fetching static data from the API, but 
 I could successfully deploy the application to Heroku with no further issues. As the platform offers a built in instance for MongoDB, I wish I persisted the data sample instead of storing it in-memory.
 
 ### Instructions to run assignment locally
-To run locally:
+To run locally:\
 - make sure to install Node.js, Angular.Js, Express.js in the machine.
 - clone the repository into the computer.
 - Go to the root folder of the project.
 - Run the following commend via terminal:
 `node server.js`
 
-To run the deployed application:
-Access via Heroku: https://evening-wave-33176.herokuapp.com 
+To run the deployed application:\
+Access via Heroku: https://evening-wave-33176.herokuapp.com \
 
 The endpoint can be accessed via Rest client or directly in the browser.
 
@@ -161,8 +161,8 @@ The endpoint can be accessed via Rest client or directly in the browser.
 Node.js unit testing. Karma comes as a built in test framework for Angular applications. I have chosen Jest for the API unit tests, but I couldn't configure the project to run both frameworks in parallel.
 
 ### Other information about your submission that you feel it's important that we know if applicable.
-- I have never worked with any of the technologies I used in this challenge.
-- I have chosen to invest a large portion of time in designing and understanding the proper technologies to use.
+I have never worked with any of the technologies I used in this challenge.\
+I have chosen to invest a large portion of time in designing and understanding the proper technologies to use.
 
 ### Your feedback on this technical challenge
 I learned a lot while doing the test.
